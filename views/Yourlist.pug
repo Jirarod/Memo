@@ -17,8 +17,10 @@ html
             a(href="/add-item") add-list
           li(class=(pageTitle === 'list') ? 'main-header__item--active' : 'main-header__item')
             a(href="/list") list
-
-
-         
     main
-      
+        each item in items
+            .container
+            h1 #{item.title}
+            p #{item.detail}
+            p #{item.time}
+            p #{item.date}
