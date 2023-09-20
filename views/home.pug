@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{pageTitle}'s Page
+    link(rel="stylesheet", href="css/main.css")
+    link(rel="stylesheet", href="css/form.css")
+
+  body
+    header.main-header
+      nav.main-header__nav
+        ul.main-header__item-list
+          li(class=(pageTitle === 'Home') ? 'main-header__item--active' : 'main-header__item')
+            a(href="/") Memo
+          li(class=(pageTitle === 'Add Item') ? 'main-header__item--active' : 'main-header__item')
+            a(href="/add-item") add-list
+          li(class=(pageTitle === 'list') ? 'main-header__item--active' : 'main-header__item')
+            a(href="/list") list
+
+
+         
+    main
