@@ -6,6 +6,8 @@ html
     title #{pageTitle}'s Page
     link(rel="stylesheet", href="css/main.css")
     link(rel="stylesheet", href="css/form.css")
+    link(rel="stylesheet", href="css/list.css")
+
 
   body
     header.main-header
@@ -18,9 +20,13 @@ html
           li(class=(pageTitle === 'list') ? 'main-header__item--active' : 'main-header__item')
             a(href="/list") list
     main
+      .containerlist
         each item in items
-            .container
-            h1 #{item.title}
-            p #{item.detail}
-            p #{item.time}
-            p #{item.date}
+          .item
+              h1 #{item.title}
+              p #{item.detail}
+              p #{item.time}
+              p #{item.date}
+              form(action=`/list`, method="POST")
+                input(type="hidden", name="id", value=`${item._id}`) 
+                button(type="submit") Confirm Delete

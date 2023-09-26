@@ -1,0 +1,17 @@
+
+.containerlist
+{
+    justify-content: center;
+    text-align: center;
+    border: #ffffff 1px solid;
+    padding-top: 2rem;
+}
+.item
+{
+    margin:  0px 10px;
+    width:  20%;
+    display: block;
+    border: #f29544 1px solid;
+    padding:  20px ;
+    border-radius: 5px;
+}

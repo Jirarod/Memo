@@ -16,6 +16,23 @@ router.get('/list',(req, res, next) => {
 
 });
 
+// Route to handle deletion of an item
+router.post('/list', (req, res, next) => {
+    const itemId = req.body.id;
+    console.log(itemId);
+  
+    Item.findByIdAndRemove(itemId)
+      .then(() => {
+        res.redirect('/list');
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+
+
+
 
 
 
